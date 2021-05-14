@@ -1,0 +1,22 @@
+package de.tylertastisch.citybuildsystemyoutube;
+
+import de.tylertastisch.citybuildsystemyoutube.Listeners.JoinListener;
+import org.bukkit.Bukkit;
+import org.bukkit.plugin.PluginManager;
+import org.bukkit.plugin.java.JavaPlugin;
+
+public final class CityBuildSystemYouTube extends JavaPlugin {
+
+    @Override
+    public void onEnable() {
+        loadListener(Bukkit.getPluginManager());
+    }
+
+    @Override
+    public void onDisable() {
+    }
+    private void loadListener(final PluginManager pluginManager){
+        pluginManager.registerEvents(new JoinListener(), this);
+
+    }
+}
