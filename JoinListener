@@ -1,0 +1,25 @@
+package de.tylertastisch.citybuildsystemyoutube.Listeners;
+
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.Location;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
+
+public class JoinListener implements Listener {
+    @EventHandler
+    public void onJoin(final PlayerJoinEvent e){
+        e.setJoinMessage("§a+ §7 " + e.getPlayer().getName());
+        e.getPlayer().sendMessage(ChatColor.BLUE + "§9Willkommen Zurück!");
+        e.getPlayer().teleport(new Location(Bukkit.getWorld("world"), 15, 100, 30, -45, 0));
+    }
+    @EventHandler
+    public void onQuit(final PlayerQuitEvent e){
+        e.setQuitMessage("§c- §7 " + e.getPlayer().getName());
+    }
+
+
+
+}
